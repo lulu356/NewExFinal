@@ -69,18 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void Init()
     {
-        //Находим лайауты авторизации и регистрации, чтобы меняться между ними
-
-
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         UserDataBase = database.getReference(Constants.USER_KEY);
 
         textEmail = findViewById(R.id.login);
         textPassword = findViewById(R.id.passwordLogin);
-
-
-
     }
 
     public  void enter(View view){
@@ -106,11 +100,10 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(MainActivity.this,
                                 "Авторизация успешна!", Toast.LENGTH_LONG).show();
-
-
                         //Переход на новое окно при успешной авторизации
                         Intent intent = new Intent(MainActivity.this,GlavnMenu.class);
                         startActivity(intent);
+                        finish();
                     }
                 }
             });

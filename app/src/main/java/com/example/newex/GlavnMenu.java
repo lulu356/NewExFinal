@@ -34,7 +34,6 @@ public class GlavnMenu extends AppCompatActivity {
 
         setRecentRecycler(recentsDataList);
 
-        openQuitDialog();
     List<serviceData> serviceDataList = new ArrayList<>();
         serviceDataList.add(new serviceData("СПА комплекс", R.drawable.service2));
         serviceDataList.add(new serviceData("Фитнесс зал", R.drawable.service1));
@@ -72,26 +71,5 @@ public class GlavnMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openQuitDialog() {
-        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
-                GlavnMenu.this);
-        quitDialog.setTitle("Выход: Вы уверены?");
-
-        quitDialog.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-
-        quitDialog.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-        quitDialog.show();
-    }
 
 }

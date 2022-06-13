@@ -1,5 +1,6 @@
 package com.example.newex;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,22 +14,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.newex.HotelDB.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Lk extends AppCompatActivity {
 
    private EditText input_name, input_email,input_sname, input_fname, input_birthday, input_phone;
        private String name, email, sname, fname, birthday, phone;
-    private FirebaseFirestore db;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lk);
 
        User user = (User) getIntent().getSerializableExtra("User");
-        db = FirebaseFirestore.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
-       input_name = (EditText) findViewById(R.id.Name_reg);
+
+        input_name = (EditText) findViewById(R.id.Name_reg);
         input_email = (EditText) findViewById(R.id.Email_reg);
         input_birthday= (EditText) findViewById(R.id.Birthday_reg);
         input_fname=(EditText) findViewById(R.id.Fname_reg);
@@ -69,6 +78,17 @@ public class Lk extends AppCompatActivity {
                     input_email.setError("Please enter Email");
                 }
                 else {
+                    databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Sname").setValue(sname);
+                    databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Name").setValue(name);
+                    databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Fname").setValue(fname);
+                    databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Phone").setValue(phone);
+                    databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Birthday").setValue(birthday);
+                    databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Email").setValue(email);
+
+                    Toast.makeText(Lk.this, "Profile Updated",Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(Lk.this , profile.class));
+                    finish();
                     // calling a method to update our course.
                     // we are passing our object class, course name,
                     // course description and course duration from our edittext field.

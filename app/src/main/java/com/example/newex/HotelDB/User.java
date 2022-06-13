@@ -68,8 +68,8 @@ public class User {
         Birthday = birthday;
     }
 
-    public User(String uid, String Name, String Sname, String Fname, String Birthday, String Password, String Email, String Phone){
-        this.id=uid;
+    public User(String id, String Name, String Sname, String Fname, String Birthday, String Password, String Email, String Phone){
+        this.id=id;
         this.Sname=Sname;
         this.Name=Name;
         this.Fname=Fname;

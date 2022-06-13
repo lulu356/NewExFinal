@@ -7,16 +7,18 @@
     android:orientation="vertical"
     tools:context=".Lk">
 
-    <EditText
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/open_sans_extra_bold"
         android:text="Изменение данных"
         android:textAlignment="center"
         android:textColor="@color/q"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,12 +111,12 @@
         android:id="@+id/Sname_reg"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/open_sans_semi_bold"
         android:hint="Фамилия"
         android:textAlignment="textStart"
-        android:textColor="@color/q"
 
+        android:textColor="@color/q"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

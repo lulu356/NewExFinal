@@ -122,8 +122,27 @@ public class reg extends AppCompatActivity {
                         "Пароли не совпадают!", Toast.LENGTH_LONG).show();
 
             }
+            firebaseAuth.createUserWithEmailAndPassword(EmailReg,PasswordReg).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+                        User info = new User(UserDataBase.getKey(), NickName, SnameReg, FnameReg, BirthdayReg, PasswordReg, EmailReg, PhoneReg);
+                        FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .setValue(info).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Toast.makeText(reg.this, "User Created", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }
+                        });
+                    }else
+                    {
+                        Toast.makeText(reg.this,"Error "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
-            firebaseAuth.createUserWithEmailAndPassword(EmailReg, PasswordReg)
+           /* firebaseAuth.createUserWithEmailAndPassword(EmailReg, PasswordReg)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -145,7 +164,7 @@ public class reg extends AppCompatActivity {
                             }
 
                     }
-                });
+                });*/
 
           /* if(EmailReg.isEmpty()) {
  User newUser = new User(UserDataBase.getKey(), NickName, SnameReg, FnameReg, BirthdayReg, PasswordReg, EmailReg, PhoneReg);
@@ -222,7 +241,7 @@ public class reg extends AppCompatActivity {
                         }
                     }
                 });*/
-            }
+        }
 
            /* if (Name.isEmpty() || Email.isEmpty() || Password.isEmpty() || repassword.isEmpty() || repassword.isEmpty())
             {
@@ -238,7 +257,7 @@ public class reg extends AppCompatActivity {
             }*/
 
 
-        }
+}
 
 
 

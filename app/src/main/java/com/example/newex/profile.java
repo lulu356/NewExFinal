@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.newex.HotelDB.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,16 +35,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import java.util.ArrayList;
 
 public class profile extends AppCompatActivity {
-    FirebaseDatabase firebaseDatabase;
-
-    // creating a variable for our
-    // Database Reference for Firebase.
-    DatabaseReference databaseReference;
-
-    // variable for Text view.
-    private TextView retrieveTV;
-
-
 
 
     @Override
@@ -50,23 +42,11 @@ public class profile extends AppCompatActivity {
         setContentView(R.layout.profile);
         super.onCreate(savedInstanceState);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-       // databaseReference=FirebaseDatabase.getInstance().getReference().child("users").child(user_id);
-        // below line is used to get
-        // reference for our database.
-       // databaseReference = firebaseDatabase.getReference("User");
-
-        // initializing our object class variable.
-        retrieveTV = findViewById(R.id.userName);
-
-        // calling method
-        // for getting data.
-
-
-        String uname = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
-        retrieveTV.setText("Logged in as " + uname);
 
     }
+
+
+
 
 
 
@@ -99,7 +79,8 @@ public class profile extends AppCompatActivity {
         });
     }*/
 
-    //
+
+
 
     public void LK_btn(View view) {
         Intent intent = new Intent(profile.this, Lk.class);
@@ -122,27 +103,7 @@ public class profile extends AppCompatActivity {
     }
 
 
-    private void openQuitDialog() {
-        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
-                profile.this);
-        quitDialog.setTitle("Выход: Вы уверены?");
 
-        quitDialog.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-
-        quitDialog.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-        quitDialog.show();
-    }
 
 
 }
