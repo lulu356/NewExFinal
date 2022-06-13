@@ -19,9 +19,8 @@ public class ServiceDetails extends AppCompatActivity {
         startActivity(intent);
     }
     public void bookingSer_btn(View view){
-        Toast toast= Toast.makeText(this,"Вы забронировали услугу.\n"+"C вами свяжутся наши сотрудники",Toast.LENGTH_LONG);
-        toast.show();
-        Intent intent= new Intent(this,GlavnMenu.class);
+
+        Intent intent= new Intent(this,chat.class);
         startActivity(intent);
     }
 }

@@ -1,7 +1,8 @@
 package com.example.newex.HotelDB;
 
 public class User {
-    public  String id, Sname,Name,Fname,Email,Password,Phone,Birthday;
+    public  String  id, Sname,Name,Fname,Email,Password,Phone,Birthday;
+
 
     public String getId() {
         return id;
@@ -67,10 +68,8 @@ public class User {
         Birthday = birthday;
     }
 
-    public User(String courseName, String courseDescription, String courseDuration) {
-    }
-    public User(String id, String Sname,String Name, String Fname,String Email,String Password, String Phone, String Birthday){
-        this.id=id;
+    public User(String uid, String Name, String Sname, String Fname, String Birthday, String Password, String Email, String Phone){
+        this.id=uid;
         this.Sname=Sname;
         this.Name=Name;
         this.Fname=Fname;
@@ -79,4 +78,5 @@ public class User {
         this.Phone=Phone;
         this.Birthday=Birthday;
     }
+   public User(){}
 }

@@ -20,13 +20,18 @@
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/activity_main.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/booking.xml" value="0.25" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/chat.xml" value="0.24635416666666668" />
-        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/glavn_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/glavn_menu.xml" value="0.264" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/info.xml" value="0.25" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/list_item_chat_end.xml" value="0.25" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/list_item_chat_start.xml" value="0.25" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/lk.xml" value="0.25" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/mess_item.xml" value="0.25" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/new_roomdetails.xml" value="0.25" />
-        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/profile.xml" value="0.1" />
-        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/reg.xml" value="0.1" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/profile.xml" value="0.2" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/recents_item.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/recents_row_item.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/recentsall.xml" value="0.4" />
+        <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/reg.xml" value="0.264" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/service_details.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/layout/service_item.xml" value="0.25" />
         <entry key="..\:/Users/Home-PC/Downloads/NewEx-master/NewEx-master/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2555" />

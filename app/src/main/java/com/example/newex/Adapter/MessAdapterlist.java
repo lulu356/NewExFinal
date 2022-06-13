@@ -1,62 +1,77 @@
 package com.example.newex.Adapter;
 
-import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newex.HotelDB.Message;
 import com.example.newex.R;
-import com.example.newex.ViewHolder;
-import com.example.newex.chat;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.annotations.Nullable;
-import com.google.firebase.firestore.auth.User;
 
-import org.w3c.dom.Comment;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class MessAdapterlist extends ArrayAdapter<Message> {
+public class MessAdapterlist extends RecyclerView.Adapter<MessAdapterlist.ViewHolder> {
+private static final int CHAT_END = 1;
+private static final int CHAT_START = 2;
 
-    public MessAdapterlist(Context context, int resource, List<Message> objects) {
-        super(context, resource, objects);
-    }
+private List<Message> mDataSet;
+private String mId;
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.mess_item, parent, false);
+        /**
+         * Called when a view has been clicked.
+         *
+         * @param dataSet Message list
+         * @param id      Device id
+         */
+        public MessAdapterlist(List<Message> dataSet, String id) {
+        mDataSet = dataSet;
+        mId = id;
         }
 
-        ImageView photoImageView = convertView.findViewById(R.id.photoImageView);
-        TextView messageTextView =  convertView.findViewById(R.id.messageTextView);
-        TextView authorTextView =  convertView.findViewById(R.id.nameTextView);
+@Override
+public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v;
 
-        Message message = getItem(position);
+        if (viewType == CHAT_END) {
+        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_chat_end, parent, false);
+        } else {
+        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_chat_start, parent, false);
+        }
 
+        return new ViewHolder(v);
+        }
 
+@Override
+public int getItemViewType(int position) {
+        if (mDataSet.get(position).getId().equals(mId)) {
+        return CHAT_END;
+        }
 
-            messageTextView.setVisibility(View.GONE);
+        return CHAT_START;
+        }
 
-            messageTextView.setVisibility(View.VISIBLE);
-            photoImageView.setVisibility(View.GONE);
-            messageTextView.setText(message.getTextMessage());
+@Override
+public void onBindViewHolder(ViewHolder holder, int position) {
+        Message chat = mDataSet.get(position);
+        holder.mTextView.setText(chat.getMessage());
+        }
 
-        authorTextView.setText(message.getUser());
+@Override
+public int getItemCount() {
+        return mDataSet.size();
+        }
 
-        return convertView;
+/**
+ * Inner Class for a recycler view
+ */
+class ViewHolder extends RecyclerView.ViewHolder {
+    TextView mTextView;
+
+    ViewHolder(View v) {
+        super(v);
+        mTextView = (TextView) itemView.findViewById(R.id.tvMessage);
     }
-
+}
 }

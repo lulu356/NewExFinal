@@ -34,7 +34,7 @@ public class GlavnMenu extends AppCompatActivity {
 
         setRecentRecycler(recentsDataList);
 
-
+        openQuitDialog();
     List<serviceData> serviceDataList = new ArrayList<>();
         serviceDataList.add(new serviceData("СПА комплекс", R.drawable.service2));
         serviceDataList.add(new serviceData("Фитнесс зал", R.drawable.service1));
@@ -63,10 +63,10 @@ public class GlavnMenu extends AppCompatActivity {
         serviceRecycler.setAdapter(serviceAdapter);
 
     }
-    public void moreRooms_btn(View view){
-        Intent intent= new Intent(GlavnMenu.this,roomdetails.class);
-        startActivity(intent);
-    }
+   // public void moreRooms_btn(View view){
+      //  Intent intent= new Intent(GlavnMenu.this,recentsall.class);
+     //   startActivity(intent);
+  //  }
     public void btn_menu(View view){
         Intent intent= new Intent(GlavnMenu.this,profile.class);
         startActivity(intent);

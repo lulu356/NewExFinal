@@ -35,20 +35,23 @@
 
         <ImageButton
             android:id="@+id/btn_menu"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="48dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:onClick="btn_menu"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/btn_logout"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+            app:srcCompat="@android:drawable/ic_menu_sort_by_size"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/TitleHotel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/open_sans_extra_bold"
             android:text="Севастопольские края"
 
@@ -56,6 +59,7 @@
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -65,56 +69,28 @@
         android:id="@+id/recents_recycle"
         android:layout_width="410dp"
         android:layout_height="211dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitleCategory" />
 
-    <TextView
-        android:id="@+id/TitleCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Популярное"
-        android:textColor="@color/q"
-        android:textSize="20dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/service_recycle"
+        android:layout_width="409dp"
+        android:layout_height="242dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-    <Button
-        android:id="@+id/moreRooms_btn"
-        android:onClick="moreRooms_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@android:color/transparent"
-        android:fontFamily="@font/open_sans_semi_bold"
-        android:text="Больше"
-        android:textColor="@color/q"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-    <Button
-        android:id="@+id/moreService_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/transparent"
-        android:fontFamily="@font/open_sans_semi_bold"
-        android:text="Больше"
-        android:textColor="@color/q"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recents_recycle" />
+        app:layout_constraintTop_toBottomOf="@+id/TitleServise_btn" />
 
     <TextView
         android:id="@+id/TitleServise_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="Дополнительные услуги"
         android:textColor="@color/q"
@@ -122,13 +98,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recents_recycle" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/service_recycle"
-        android:layout_width="409dp"
-        android:layout_height="242dp"
-        android:layout_marginTop="16dp"
+    <Button
+        android:id="@+id/moreService_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@android:color/transparent"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:text="Больше"
+        android:textColor="@color/q"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recents_recycle" />
+
+    <Button
+        android:id="@+id/moreRooms_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:onClick="moreRooms_btn"
+        android:text="Больше"
+        android:textColor="@color/q"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/TitleCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Популярное"
+        android:textColor="@color/q"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleServise_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
